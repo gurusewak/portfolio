@@ -59,6 +59,7 @@
     "babel-jest": "^20.0.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "jest": "^20.0.4",
+    "robotstxt-webpack-plugin": "^4.0.1",
     "standard": "^10.0.3",
     "webpack-dev-server": "^2.7.1"
   },

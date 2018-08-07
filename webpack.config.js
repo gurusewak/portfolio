@@ -8,8 +8,9 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const RobotstxtPlugin = require("robotstxt-webpack-plugin").default;
 
-module.exports = function (env = {}) {
+module.exports = function(env = {}) {
   const extractSass = new ExtractTextPlugin({
     filename: 'styles.css'
   })
@@ -17,12 +18,35 @@ module.exports = function (env = {}) {
   const plugins = (() => {
     const pluginsArray = [
       extractSass,
+      new RobotstxtPlugin({
+        policy: [{
+            userAgent: "Googlebot",
+            allow: "/",
+            disallow: ["/search"],
+            crawlDelay: 2
+          },
+          {
+            userAgent: "OtherBot",
+            allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
+            disallow: ["/admin", "/login"],
+            crawlDelay: 2
+          },
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: "/search",
+            crawlDelay: 10,
+            cleanParam: "ref /articles/"
+          }
+        ],
+        host: "http://gurusewak.com"
+      }),
 
       new CleanWebpackPlugin('build'),
-      new HtmlWebpackPlugin({template: './src/index.hbs'}),
+      new HtmlWebpackPlugin({ template: './src/index.hbs' }),
       new StringReplacePlugin(),
       new ImageminPlugin({
-                // disable: !env.production,
+        // disable: !env.production,
         plugins: [
           imageminMozjpeg({
             quality: 40,
@@ -66,8 +90,7 @@ module.exports = function (env = {}) {
       inline: true
     },
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.hbs$/,
           loader: 'handlebars-loader',
           query: {
@@ -104,11 +127,9 @@ module.exports = function (env = {}) {
         },
         {
           test: /\.(png|jpg|gif)$/,
-          use: [
-            {
-              loader: 'file-loader'
-            }
-          ]
+          use: [{
+            loader: 'file-loader'
+          }]
         },
         {
           test: /\.svg$/,
@@ -117,8 +138,7 @@ module.exports = function (env = {}) {
         {
           test: /\.svg$/,
           loader: StringReplacePlugin.replace({
-            replacements: [
-              {
+            replacements: [{
                 pattern: /font-family="'Roboto-Thin'"/ig,
                 replacement: () => 'font-weight="100"'
               },
