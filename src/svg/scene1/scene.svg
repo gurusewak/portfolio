@@ -574,10 +574,9 @@
     </g>
   </g>
   <g id="intro2">
-    <text transform="matrix(1 0 0 1 531.193 283.9221)" fill="#01050A" font-family="'Roboto-Thin'" font-size="18px">a design and technology hybrid .</text>
-    <text transform="matrix(1 0 0 1 529.3051 224.3221)" fill="#01050A" font-family="'Roboto-Thin'" font-size="18px"> - Participate in the design process: Discover, Ideate, Design &amp; Define </text>
-    <text transform="matrix(1 0 0 1 529.3051 245.9221)" fill="#01050A" font-family="'Roboto-Thin'" font-size="18px"> - Leads the UI development efforts across all web applications, ensuring best practices are followed at all times. </text>
-    <text transform="matrix(1 0 0 1 529.3051 202.1221)" fill="#01050A" font-family="'Roboto-Thin'" font-size="18px">* An engineer who has the technical knowhow and edge to create production code and: </text>
+    <text transform="matrix(1 0 0 1 529.3051 224.3221)" fill="#ECF0F1" font-family="'Roboto-Thin'" font-size="18px"> - Participate in the design process: Discover, Ideate, Design &amp; Define </text>
+    <text transform="matrix(1 0 0 1 529.3051 245.9221)" fill="#ECF0F1" font-family="'Roboto-Thin'" font-size="18px"> - Leads the UI development efforts across all web applications, ensuring best practices are followed at all times. </text>
+    <text transform="matrix(1 0 0 1 529.3051 202.1221)" fill="#ECF0F1" font-family="'Roboto-Thin'" font-size="18px">An engineer who has the technical knowhow and edge to create production code and: </text>
   </g>
   <g id="intro1">
     <text transform="matrix(1 0 0 1 527.3451 60.4757)" fill="#ECF0F1" font-family="'Roboto-Thin'" font-size="30px">I’m Gurusewak Kalra,</text>
